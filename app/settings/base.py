@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
-SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
+SECRET_KEY = 'some-secret'
 DEBUG = True
 ALLOWED_HOSTS = []
 
@@ -24,7 +24,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
 
-    'posts'
+    'posts',
+    'trees',
 ]
 
 MIDDLEWARE = [
