@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const AuthHeader = () => {
+const UnAuthHeader = () => {
   const classes = useStyles();
 
   return (
@@ -45,4 +45,4 @@ const AuthHeader = () => {
   )
 }
 
-export default AuthHeader
+export default UnAuthHeader

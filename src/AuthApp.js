@@ -4,7 +4,7 @@ import AuthHeader from './shared/AuthHeader'
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Home from "./containers/Home";
-import Dashboard from "./containers/dashboard";
+import Dashboard from "./containers/Dashboard";
 
 const AuthApp = () => {
   return (
