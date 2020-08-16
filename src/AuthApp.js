@@ -8,7 +8,7 @@ import Dashboard from "./containers/Dashboard";
 
 const AuthApp = () => {
   return (
-    <BrowserRouter>
+    <>
       <AuthHeader />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -16,7 +16,7 @@ const AuthApp = () => {
         <Route path="/signup" component={Signup} />
         <Route path="/dashboard" component={Dashboard} />
       </Switch>
-    </BrowserRouter>
+    </>
   )
 }
 

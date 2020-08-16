@@ -1,9 +1,10 @@
 import React, { useEffect } from "react"
-import { BrowserRouter as Router } from "react-router-dom"
+import { Router } from "react-router-dom"
 import { connect } from "react-redux"
 import BaseRouter from "./routes"
 import AuthApp from './AuthApp'
 import UnAuthApp from './UnAuthApp'
+import history from './history'
 
 import * as actions from "./store/actions/auth"
 
@@ -17,7 +18,12 @@ const App = props => {
     onTryAutoSignup()
   }, [])
 
-  return isAuthenticated ? <AuthApp /> : <UnAuthApp />
+  // return isAuthenticated ? <AuthApp /> : <UnAuthApp />
+  return (
+    <Router history={history}>
+      { isAuthenticated ? <AuthApp /> : <UnAuthApp /> }
+    </Router>
+  )
 }
 
 const mapStateToProps = state => {

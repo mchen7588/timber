@@ -7,14 +7,14 @@ import Home from "./containers/Home";
 
 const UnAuthApp = () => {
   return (
-    <BrowserRouter>
+    <>
       <UnAuthHeader />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
       </Switch>
-    </BrowserRouter>
+    </>
   )
 }
 
