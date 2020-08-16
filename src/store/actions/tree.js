@@ -1,5 +1,7 @@
-import axios from "axios"
-import * as actionTypes from "./actionTypes"
+import axios from 'axios'
+import * as actionTypes from './actionTypes'
+
+import history from '../../history'
 
 export const getTreesByName = (dispatch) => {
   console.log('!!!!!!!!!!!!!!!')
@@ -16,6 +18,8 @@ export const getTreesByName = (dispatch) => {
             data: res.data
           }
         )
+
+        history.push('/tree-list')
       })
       .catch(err => {
         console.log('get trees error', err)

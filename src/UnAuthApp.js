@@ -4,6 +4,7 @@ import UnAuthHeader from './shared/UnAuthHeader'
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Home from "./containers/Home";
+import TreeList from './containers/TreeList'
 
 const UnAuthApp = () => {
   return (
@@ -13,6 +14,7 @@ const UnAuthApp = () => {
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path='/tree-list' component={TreeList} />
       </Switch>
     </>
   )
