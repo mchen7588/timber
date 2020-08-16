@@ -13,7 +13,7 @@ const Dashboard = props => {
       <div>
         Dashboard
       </div>
-    </ Container>
+    </Container>
   )
 }
 

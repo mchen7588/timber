@@ -4,8 +4,10 @@ import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import TextField from '@material-ui/core/TextField'
 import CssBaseline from '@material-ui/core/CssBaseline'
-
 import { withRouter } from 'react-router-dom'
+import { connect } from "react-redux";
+
+import { getTreesByName } from '../store/actions/tree'
 
 const Home = props => {
   console.log('home')
@@ -13,13 +15,14 @@ const Home = props => {
   const [treeName, setTreeName] = useState('')
 
   const handleClick = () => {
-    axios.get('/api/trees/')
-      .then(data => {
-        console.log('######################')
-        console.log(data)
-
-        // props.history.push('/login')
-      })
+    props.getTreesByName()
+    // axios.get('/api/trees/')
+    //   .then(data => {
+    //     console.log('######################')
+    //     console.log(data)
+    //
+    //     // props.history.push('/login')
+    //   })
   }
 
   const handleInputChange = e => {
@@ -53,8 +56,24 @@ const Home = props => {
       <div>
         tree name: {treeName}
       </div>
-    </ Container>
+    </Container>
   )
 }
 
-export default withRouter(Home)
+const mapStateToProps = state => {
+  return {
+    trees: state.treeReducer.treesByName
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getTreesByName: () => dispatch(getTreesByName())
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)
+// export default withRouter(Home)
