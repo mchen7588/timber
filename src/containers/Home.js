@@ -60,11 +60,11 @@ const Home = props => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    trees: state.treeReducer.treesByName
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     trees: state.treeReducer.treesByName
+//   }
+// }
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -73,7 +73,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  null,
+  mapDispatchToProps,
 )(Home)
-// export default withRouter(Home)
+

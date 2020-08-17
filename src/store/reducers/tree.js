@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initialTreeState = {
-  treesByName: [],
+  treeList: [],
 }
 
 const reducer = (state = initialTreeState, action) => {
@@ -9,7 +9,7 @@ const reducer = (state = initialTreeState, action) => {
     case actionTypes.GET_TREES_BY_NAME:
       return {
         ...state,
-        treesByName: action.data,
+        treeList: action.data,
       }
     default:
       return state
