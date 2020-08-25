@@ -21,11 +21,7 @@ def tree_list(request):
 
 # fetch app tree detail
 def tree_detail(request, tree_id):
-    client = Socrata("data.smgov.net", None)
-    results = client.get("w8ue-6cnd", tree_id=tree_id)
-
-    print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-    print(results)
-
-    return JsonResponse(results[0], safe=False)
+    print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+    print(tree_id)
+    return JsonResponse({"a": "A"}, safe=False)
 

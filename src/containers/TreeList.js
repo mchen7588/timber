@@ -1,20 +1,31 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import Link from '@material-ui/core/Link'
 import { connect } from "react-redux";
 
-import { withRouter } from 'react-router-dom'
+import { getTreeDetail } from '../store/actions/treeDetail'
 
 const TreeList = props => {
   console.log('TreeList')
+
+  const handleClick = selectedTree => {
+    return () => {
+      console.log('click')
+      props.getTreeDetail(selectedTree)
+    }
+  }
 
   const renderTreeList = () => {
     return props.trees.map(tree => {
       return (
         <div
           key={tree.tree_id}
+          onClick={handleClick(tree)}
         >
-          {tree.tree_id}
+          <Link variant="button" color="textPrimary" >
+            {tree.tree_id}
+          </Link>
         </div>
       )
     })
@@ -38,11 +49,13 @@ const mapStateToProps = state => {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    getTreeDetail: selectedTree => dispatch(getTreeDetail(selectedTree))
+  }
+}
 
 export default connect(
   mapStateToProps,
-  null,
+  mapDispatchToProps,
 )(TreeList)

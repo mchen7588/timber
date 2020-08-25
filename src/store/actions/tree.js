@@ -3,7 +3,7 @@ import * as actionTypes from './actionTypes'
 
 import history from '../../history'
 
-export const getTreesByName = (dispatch) => {
+export const getTreesByName = () => {
   console.log('!!!!!!!!!!!!!!!')
 
   return dispatch => {
@@ -15,7 +15,7 @@ export const getTreesByName = (dispatch) => {
         dispatch(
           {
             type: actionTypes.GET_TREES_BY_NAME,
-            data: res.data
+            data: res.data,
           }
         )
 
