@@ -59,14 +59,16 @@ export const authLogin = (email, password) => {
   };
 };
 
-export const authSignup = (email, password1, password2) => {
+export const authSignup = (email, password1, password2, firstName, lastName) => {
   return dispatch => {
     dispatch(authStart());
     axios
       .post("/rest-auth/registration/", {
-        email: email,
-        password1: password1,
-        password2: password2
+        email,
+        password1,
+        password2,
+        first_name: firstName,
+        last_name: lastName,
       })
       .then(res => {
         const token = res.data.key;

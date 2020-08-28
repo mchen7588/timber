@@ -85,8 +85,8 @@ const Signup = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const { email, password1, password2 } = values
-    props.signup(email, password1, password2)
+    const { email, password1, password2, firstName, lastName } = values
+    props.signup(email, password1, password2, firstName, lastName)
   }
 
   if (props.token) {
@@ -219,8 +219,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signup: (email, password1, password2) => {
-      dispatch(authSignup(email, password1, password2))
+    signup: (email, password1, password2, firstName, lastName) => {
+      dispatch(authSignup(email, password1, password2, firstName, lastName))
     }
   }
 }
