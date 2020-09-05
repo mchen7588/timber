@@ -6,6 +6,7 @@ import Signup from './containers/Signup'
 import Home from './containers/Home'
 import Dashboard from './containers/Dashboard'
 import TreeList from './containers/TreeList'
+import TreeDetail from './containers/TreeDetail'
 
 const AuthApp = () => {
   return (
@@ -17,6 +18,7 @@ const AuthApp = () => {
         <Route path='/signup' component={Signup} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/tree-list' component={TreeList} />
+        <Route path='/tree-detail' component={TreeDetail} />
       </Switch>
     </>
   )

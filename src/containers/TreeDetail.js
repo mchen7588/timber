@@ -1,10 +1,15 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import Button from '@material-ui/core/Button'
 import { connect } from "react-redux";
 
 const TreeDetail = props => {
   console.log('TreeDetail')
+
+  const handleClick = () => {
+    props.history.push('/dashboard')
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -12,7 +17,16 @@ const TreeDetail = props => {
       <div>
         TreeDetail
       </div>
-      {JSON.stringify(props?.treeDetail)}
+      <Button
+        onClick={handleClick}
+        variant="contained"
+        color="primary"
+      >
+        claim tree
+      </Button>
+      <div>
+        {JSON.stringify(props?.treeDetail)}
+      </div>
     </Container>
   )
 }
